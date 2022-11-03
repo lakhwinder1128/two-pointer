@@ -1,3 +1,6 @@
+First, check the sequence of L and R in start and end is the same;
+Second, index of L in start should be >= index of corresponding L in end, while index of R <= corresponding index. 
+ 
  bool canTransform(string start, string end) {
         
         int j=0;
