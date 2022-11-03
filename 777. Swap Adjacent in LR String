@@ -1,0 +1,28 @@
+ bool canTransform(string start, string end) {
+        
+        int j=0;
+         int i=0;
+        int n=start.size();
+        int m=end.size();
+        if(n!=m)return false;
+        while(i<n||j<m){
+            if(end[j]!='R'&&end[j]!='L'&&j<m){j++;
+                                      continue;   }
+            if(start[i]!='R'&&start[i]!='L'&&i<n){
+                i++;
+                continue;
+                }
+            if(start[i]=='L'&&end[j]=='L'){
+                if(i<j)return false;
+                i++;
+                j++;
+            }
+            else if(start[i]=='R'&&end[j]=='R'){
+                if(i>j)return false;
+                i++;
+                j++;
+            }
+           else return false;
+        }
+        return true;
+    }
